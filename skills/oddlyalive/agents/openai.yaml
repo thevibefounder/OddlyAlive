@@ -1,0 +1,4 @@
+interface:
+  display_name: "OddlyAlive"
+  short_description: "Create natural, physics-driven object motion"
+  default_prompt: "Use $oddlyalive to turn this object idea into a deterministic physics-driven animation."

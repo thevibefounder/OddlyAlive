@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oddlyalive.dev/schemas/scene.schema.json",
+  "title": "OddlyAlive scene",
+  "type": "object",
+  "required": [
+    "version",
+    "type",
+    "seed",
+    "canvas",
+    "timing",
+    "field",
+    "material",
+    "contact",
+    "gesture",
+    "payload"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    },
+    "type": {
+      "const": "strand-field"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed": {
+      "type": "number"
+    },
+    "canvas": {
+      "$ref": "#/$defs/canvas"
+    },
+    "timing": {
+      "$ref": "#/$defs/timing"
+    },
+    "field": {
+      "$ref": "#/$defs/field"
+    },
+    "material": {
+      "$ref": "#/$defs/material"
+    },
+    "contact": {
+      "$ref": "#/$defs/contact"
+    },
+    "gesture": {
+      "$ref": "#/$defs/gesture"
+    },
+    "payload": {
+      "$ref": "#/$defs/payload"
+    },
+    "render": {
+      "$ref": "#/$defs/render"
+    }
+  },
+  "$defs": {
+    "canvas": {
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "number", "minimum": 64 },
+        "height": { "type": "number", "minimum": 64 }
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "required": ["duration", "fps", "substeps", "preRoll"],
+      "properties": {
+        "duration": { "type": "number", "minimum": 0.1, "maximum": 60 },
+        "fps": { "type": "integer", "minimum": 1, "maximum": 240 },
+        "substeps": { "type": "integer", "minimum": 1, "maximum": 16 },
+        "preRoll": { "type": "number", "minimum": 0, "maximum": 30 }
+      },
+      "additionalProperties": false
+    },
+    "field": {
+      "type": "object",
+      "required": [
+        "columns",
+        "rows",
+        "originX",
+        "originY",
+        "spacingX",
+        "spacingY"
+      ],
+      "properties": {
+        "columns": { "type": "integer", "minimum": 1, "maximum": 128 },
+        "rows": { "type": "integer", "minimum": 3, "maximum": 128 },
+        "originX": { "type": "number" },
+        "originY": { "type": "number" },
+        "spacingX": { "type": "number", "exclusiveMinimum": 0 },
+        "spacingY": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "material": {
+      "type": "object",
+      "required": [
+        "gravity",
+        "linearDrag",
+        "quadraticDrag",
+        "lengthCompliance",
+        "compressionCompliance",
+        "bendCompliance",
+        "maxStretch"
+      ],
+      "properties": {
+        "gravity": { "type": "number" },
+        "linearDrag": { "type": "number", "minimum": 0 },
+        "quadraticDrag": { "type": "number", "minimum": 0 },
+        "lengthCompliance": { "type": "number", "minimum": 0 },
+        "compressionCompliance": { "type": "number", "minimum": 0 },
+        "bendCompliance": { "type": "number", "minimum": 0 },
+        "maxStretch": { "type": "number", "minimum": 1, "maximum": 1.5 }
+      },
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "radiusX",
+        "radiusY",
+        "maxStaticGrip",
+        "captureStartRow",
+        "captureEndRow"
+      ],
+      "properties": {
+        "radiusX": { "type": "number", "exclusiveMinimum": 0 },
+        "radiusY": { "type": "number", "exclusiveMinimum": 0 },
+        "maxStaticGrip": { "type": "integer", "minimum": 1 },
+        "captureStartRow": { "type": "integer", "minimum": 0 },
+        "captureEndRow": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "gesture": {
+      "type": "object",
+      "required": ["type", "points"],
+      "properties": {
+        "type": { "const": "touch-path" },
+        "points": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["time", "x", "y", "pressure"],
+            "properties": {
+              "time": { "type": "number" },
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "pressure": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "object",
+      "required": ["text", "fontFamily", "fontSize"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "fontFamily": { "type": "string", "minLength": 1 },
+        "fontSize": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "render": {
+      "type": "object",
+      "properties": {
+        "background": { "type": "string" },
+        "ink": { "type": "string" },
+        "accent": { "type": "string" },
+        "filament": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
