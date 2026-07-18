@@ -42,3 +42,17 @@ Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
   (shoe/wave); the original strand fingerprint remains `4c56b4e5`.
 - **Next:** Publish the repository/npm alpha, then add articulated bodies,
   joint limits, foot contacts, and inverse kinematics for the walking recipe.
+
+## 2026-07-18 — Agent.md-Codex — Public alpha release
+
+- **Did:** Published the verified OddlyAlive source as a public GitHub
+  repository under `thevibefounderdotcom/OddlyAlive` and prepared the npm
+  package for an `alpha` dist-tag rather than presenting a prerelease as
+  `latest`.
+- **Changed:** Added canonical repository, homepage, issue tracker, public
+  access, and prerelease-tag metadata to `package.json`.
+- **Learned:** The `oddlyalive` npm name is available, but this machine has no
+  authenticated npm session, so registry publication correctly stops at the
+  account boundary instead of attempting to bypass login or 2FA.
+- **Next:** Authenticate npm interactively, run
+  `npm publish --access public --tag alpha`, and verify the published tarball.

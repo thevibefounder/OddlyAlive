@@ -4,6 +4,18 @@
   "description": "Deterministic, physics-driven object motion from simple scene recipes.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thevibefounderdotcom/OddlyAlive.git"
+  },
+  "homepage": "https://github.com/thevibefounderdotcom/OddlyAlive#readme",
+  "bugs": {
+    "url": "https://github.com/thevibefounderdotcom/OddlyAlive/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
+  },
   "bin": {
     "oddlyalive": "./bin/oddlyalive.js"
   },
