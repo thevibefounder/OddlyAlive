@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="OddlyAlive football kick impulse example" />
+    <title>Football Kick — OddlyAlive</title>
+    <link rel="stylesheet" href="../shared/example.css" />
+  </head>
+  <body class="theme-kick">
+    <main>
+      <header>
+        <a class="wordmark" href="../"><span class="mark"></span>OddlyAlive</a>
+        <nav>
+          <a href="../ball-lab/">← Ball Lab</a>
+          <a href="../shoe-splash/">Shoe Splash →</a>
+        </nav>
+      </header>
+      <section class="stage">
+        <div class="poster">
+          <div class="poster-copy">
+            <p class="eyebrow">04 / CONTACT IMPULSE</p>
+            <h1>KICK IT.<br /><em>DON’T KEYFRAME IT.</em></h1>
+            <p class="description">
+              One timed impulse supplies force and spin. Gravity, restitution
+              and turf friction write every frame that follows.
+            </p>
+          </div>
+          <p class="corner-note">ONE IMPULSE<br />NO AUTHORED ARC<br />DETERMINISTIC</p>
+          <svg
+            id="motion"
+            class="motion"
+            viewBox="0 0 960 540"
+            role="img"
+            aria-label="A football kicked across a field toward a goal"
+          ></svg>
+          <div class="folio">OA—004</div>
+          <div id="loading" class="loading">SOLVING WORLD…</div>
+        </div>
+      </section>
+      <footer>
+        <div class="controls">
+          <button id="toggle" type="button">PAUSE</button>
+          <input id="scrubber" type="range" min="0" value="0" aria-label="Timeline" />
+        </div>
+        <dl class="metrics">
+          <div><dt>solver</dt><dd>rigid circles</dd></div>
+          <div><dt>step</dt><dd>240 Hz</dd></div>
+          <div><dt id="metric-name">impulse</dt><dd id="metric">—</dd></div>
+          <div><dt>fingerprint</dt><dd id="fingerprint">—</dd></div>
+        </dl>
+      </footer>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

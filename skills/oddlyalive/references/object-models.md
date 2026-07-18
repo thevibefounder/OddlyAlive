@@ -3,11 +3,14 @@
 | Requested object | Start with | Required behavior |
 |---|---|---|
 | strings, garlands, necklaces | strand XPBD | length, bend, friction, peel |
-| flower stems | articulated strands | bend limits, attached petals |
+| crystal pendants, simple hanging charms | weighted strands | terminal mass, lag, overswing |
+| flower stems | articulated strands (planned) | bend limits, attached petals |
 | flags, curtains, fabric | cloth XPBD | surface shear and collision |
-| balls, blocks, loose props | rigid bodies | collision, restitution, friction |
-| rackets, signs, mobiles | rigid bodies + joints | angular inertia, hinges, springs |
-| water, smoke, sand | particles or fluid model | neighborhood interaction |
+| balls | rigid circles | collision, restitution, friction, spin |
+| blocks, rackets, signs | rigid shapes + joints (planned) | angular inertia, hinges, springs |
+| stylized water ripple | damped 1D wave | surface propagation, drag, buoyancy |
+| full water, smoke, sand | particles or fluid model (planned) | neighborhood interaction |
+| walking | articulated skeleton + IK (planned) | contacts, balance, joint limits |
 
 Map interaction language to physics:
 

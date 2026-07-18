@@ -1,6 +1,6 @@
 {
   "name": "oddlyalive",
-  "version": "0.1.0-alpha.1",
+  "version": "0.2.0-alpha.1",
   "description": "Deterministic, physics-driven object motion from simple scene recipes.",
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,9 @@
   "exports": {
     ".": "./src/index.js",
     "./scene": "./src/scene.js",
-    "./strands": "./src/strands.js"
+    "./strands": "./src/strands.js",
+    "./rigid": "./src/rigid-balls.js",
+    "./waves": "./src/surface-wave.js"
   },
   "files": [
     "bin",
@@ -23,8 +25,8 @@
     "README.md"
   ],
   "scripts": {
-    "start": "node ./bin/oddlyalive.js play string-touch",
-    "demo": "node ./bin/oddlyalive.js play string-touch",
+    "start": "node ./bin/oddlyalive.js play",
+    "demo": "node ./bin/oddlyalive.js play",
     "inspect": "node ./bin/oddlyalive.js inspect ./examples/string-touch/scene.json",
     "simulate": "node ./bin/oddlyalive.js simulate ./examples/string-touch/scene.json",
     "test": "node --test",

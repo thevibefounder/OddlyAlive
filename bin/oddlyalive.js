@@ -15,6 +15,13 @@ import { startServer } from "../scripts/serve.js";
 
 const packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const commands = new Set(["help", "inspect", "list", "new", "play", "simulate"]);
+const presets = new Map([
+  ["string-touch", "deterministic XPBD strand field"],
+  ["crystal-mobile", "weighted payloads on flexible strands"],
+  ["ball-lab", "rigid-body material comparison"],
+  ["football-kick", "single-impulse flight, bounce and roll"],
+  ["shoe-splash", "rigid prop coupled to a damped wave surface"]
+]);
 
 function flagValue(args, flag, fallback = undefined) {
   const index = args.indexOf(flag);
@@ -25,14 +32,15 @@ function printHelp() {
   console.log(`OddlyAlive — Make anything feel alive.
 
 Usage:
-  oddlyalive play [string-touch] [--port 4173] [--no-open]
+  oddlyalive play [gallery|preset] [--port 4173] [--no-open]
   oddlyalive new <directory> [--preset string-touch] [--text "HELLO"]
   oddlyalive inspect <scene.json>
   oddlyalive simulate <scene.json> [--output result.json]
   oddlyalive list
 
 Start here:
-  npx oddlyalive play string-touch
+  npx oddlyalive play
+  npx oddlyalive play football-kick
 `);
 }
 
@@ -43,7 +51,7 @@ function loadScene(path) {
 
 function diagnosticSummary(result) {
   const { scene, diagnostics, fingerprint } = result;
-  return {
+  const common = {
     ok: true,
     name: scene.name,
     type: scene.type,
@@ -52,27 +60,53 @@ function diagnosticSummary(result) {
     fps: scene.timing.fps,
     simulationHz: scene.timing.fps * scene.timing.substeps,
     frameCount: Math.round(scene.timing.duration * scene.timing.fps) + 1,
-    particleCount: scene.field.columns * scene.field.rows,
-    configuredStaticGripCap: scene.contact.maxStaticGrip,
-    observedMaxStaticGrip: diagnostics.observedMaxStaticGrip,
-    observedMaxCombinedContact: diagnostics.observedMaxCombinedContact,
-    firstGripTime: diagnostics.firstGripTime,
-    lastGripTime: diagnostics.lastGripTime,
-    observedMaxStretch: diagnostics.observedMaxStretch,
-    maxStretchPerProjection: scene.material.maxStretch,
     fingerprint
+  };
+  if (scene.type === "strand-field") {
+    return {
+      ...common,
+      particleCount: scene.field.columns * scene.field.rows,
+      configuredStaticGripCap: scene.contact.maxStaticGrip,
+      observedMaxStaticGrip: diagnostics.observedMaxStaticGrip,
+      observedMaxCombinedContact: diagnostics.observedMaxCombinedContact,
+      firstGripTime: diagnostics.firstGripTime,
+      lastGripTime: diagnostics.lastGripTime,
+      observedMaxStretch: diagnostics.observedMaxStretch,
+      maxStretchPerProjection: scene.material.maxStretch
+    };
+  }
+  if (scene.type === "rigid-balls") {
+    return {
+      ...common,
+      bodyCount: scene.bodies.length,
+      collisionCount: diagnostics.collisionCount,
+      firstImpactTime: diagnostics.firstImpactTime,
+      maxSpeed: diagnostics.maxSpeed,
+      maxPenetration: diagnostics.maxPenetration,
+      appliedImpulses: diagnostics.appliedImpulses,
+      finalRestingBodies: diagnostics.finalRestingBodies
+    };
+  }
+  return {
+    ...common,
+    surfaceSamples: scene.surface.samples,
+    impactCount: diagnostics.impactCount,
+    firstImpactTime: diagnostics.firstImpactTime,
+    maxWaveHeight: diagnostics.maxWaveHeight,
+    maxSubmersion: diagnostics.maxSubmersion,
+    maxBodySpeed: diagnostics.maxBodySpeed
   };
 }
 
 function createStarter(args) {
-  const targetArgument = args.find((argument) => !argument.startsWith("-"));
+  const targetArgument = args[0]?.startsWith("-") ? undefined : args[0];
   if (!targetArgument) {
     throw new TypeError("Provide a directory name: oddlyalive new my-motion");
   }
   const target = resolve(targetArgument);
   const preset = flagValue(args, "--preset", "string-touch");
-  const text = flagValue(args, "--text", "MAKE ANYTHING FEEL ALIVE");
-  if (preset !== "string-touch") {
+  const text = flagValue(args, "--text");
+  if (!presets.has(preset)) {
     throw new RangeError(`Unknown preset: ${preset}`);
   }
   if (existsSync(target) && readdirSync(target).length > 0) {
@@ -86,15 +120,35 @@ function createStarter(args) {
     join(target, "examples", preset),
     { recursive: true }
   );
+  cpSync(
+    join(packageRoot, "examples", "shared"),
+    join(target, "examples", "shared"),
+    { recursive: true }
+  );
+  cpSync(join(packageRoot, "schemas"), join(target, "schemas"), {
+    recursive: true
+  });
   cpSync(join(packageRoot, "scripts"), join(target, "scripts"), {
     recursive: true
   });
 
   const scenePath = join(target, "examples", preset, "scene.json");
   const scene = JSON.parse(readFileSync(scenePath, "utf8"));
-  scene.name = `${text} — OddlyAlive`;
-  scene.payload.text = `${text}  •  `;
+  if (text) {
+    scene.name = `${text} — OddlyAlive`;
+    if (scene.type === "strand-field") {
+      scene.payload.text = `${text}  •  `;
+    }
+  }
   writeFileSync(scenePath, `${JSON.stringify(scene, null, 2)}\n`);
+  const exampleIndexPath = join(target, "examples", preset, "index.html");
+  const exampleIndex = readFileSync(exampleIndexPath, "utf8")
+    .replaceAll('href="../"', 'href="./"')
+    .replace(
+      /<nav>[\s\S]*?<\/nav>/,
+      '<nav><a href="./">LOCAL RECIPE</a></nav>'
+    );
+  writeFileSync(exampleIndexPath, exampleIndex);
 
   const packageName = basename(target)
     .toLowerCase()
@@ -108,7 +162,7 @@ function createStarter(args) {
         private: true,
         type: "module",
         scripts: {
-          start: "node ./scripts/serve.js"
+          start: `node ./scripts/serve.js --path /examples/${preset}/`
         }
       },
       null,
@@ -117,7 +171,7 @@ function createStarter(args) {
   );
   writeFileSync(
     join(target, "README.md"),
-    `# ${text}\n\nGenerated with OddlyAlive.\n\n\`\`\`bash\nnpm start\n\`\`\`\n\nEdit \`examples/string-touch/scene.json\` to change the material, gesture, payload, or timing.\n`
+    `# ${text ?? scene.name}\n\nGenerated from the OddlyAlive \`${preset}\` recipe.\n\n\`\`\`bash\nnpm start\n\`\`\`\n\nEdit \`examples/${preset}/scene.json\` to change the world, material, objects, or timing.\n`
   );
 
   console.log(`Created ${target}`);
@@ -137,21 +191,25 @@ async function main() {
   }
 
   if (command === "list") {
-    console.log("Available recipes:\n  string-touch  deterministic XPBD strand field");
+    console.log(
+      `Available recipes:\n${[...presets]
+        .map(([name, description]) => `  ${name.padEnd(16)} ${description}`)
+        .join("\n")}`
+    );
     return;
   }
 
   if (command === "play") {
     const preset =
-      args[1]?.startsWith("-") ? "string-touch" : args[1] ?? "string-touch";
-    if (preset !== "string-touch") {
+      args[1]?.startsWith("-") ? "gallery" : args[1] ?? "gallery";
+    if (preset !== "gallery" && !presets.has(preset)) {
       throw new RangeError(`Unknown preset: ${preset}`);
     }
     const port = Number(flagValue(args, "--port", 4173));
     await startServer({
       root: packageRoot,
       port,
-      pathname: `/examples/${preset}/`,
+      pathname: preset === "gallery" ? "/examples/" : `/examples/${preset}/`,
       shouldOpen: !args.includes("--no-open")
     });
     return;
@@ -164,6 +222,24 @@ async function main() {
 
   if (command === "inspect") {
     const scene = loadScene(args[1]);
+    const details =
+      scene.type === "strand-field"
+        ? {
+            particles: scene.field.columns * scene.field.rows,
+            gesturePoints: scene.gesture.points.length,
+            configuredStaticGripCap: scene.contact.maxStaticGrip
+          }
+        : scene.type === "rigid-balls"
+          ? {
+              bodies: scene.bodies.length,
+              scheduledImpulses: scene.impulses.length,
+              floorY: scene.world.floorY
+            }
+          : {
+              surfaceSamples: scene.surface.samples,
+              bodyKind: scene.body.kind,
+              surfaceY: scene.surface.restY
+            };
     console.log(
       JSON.stringify(
         {
@@ -173,9 +249,7 @@ async function main() {
           type: scene.type,
           canvas: scene.canvas,
           timing: scene.timing,
-          particles: scene.field.columns * scene.field.rows,
-          gesturePoints: scene.gesture.points.length,
-          configuredStaticGripCap: scene.contact.maxStaticGrip
+          ...details
         },
         null,
         2

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="OddlyAlive rigid ball material lab" />
+    <title>Ball Lab — OddlyAlive</title>
+    <link rel="stylesheet" href="../shared/example.css" />
+  </head>
+  <body class="theme-ball">
+    <main>
+      <header>
+        <a class="wordmark" href="../"><span class="mark"></span>OddlyAlive</a>
+        <nav>
+          <a href="../crystal-mobile/">← Crystal Mobile</a>
+          <a href="../football-kick/">Football Kick →</a>
+        </nav>
+      </header>
+      <section class="stage">
+        <div class="poster">
+          <div class="poster-copy">
+            <p class="eyebrow">03 / RIGID BODY LAB</p>
+            <h1>THREE BALLS.<br /><em>THREE LIVES.</em></h1>
+            <p class="description">
+              Diameter is only the silhouette. Mass, restitution, friction and
+              spin determine whether an object snaps, rebounds or settles.
+            </p>
+          </div>
+          <p class="corner-note">BASEBALL · 145 G<br />BASKETBALL · 625 G<br />FOOTBALL · 430 G</p>
+          <svg
+            id="motion"
+            class="motion"
+            viewBox="0 0 960 540"
+            role="img"
+            aria-label="A baseball, basketball and football falling and bouncing differently"
+          ></svg>
+          <div class="folio">OA—003</div>
+          <div id="loading" class="loading">SOLVING WORLD…</div>
+        </div>
+      </section>
+      <footer>
+        <div class="controls">
+          <button id="toggle" type="button">PAUSE</button>
+          <input id="scrubber" type="range" min="0" value="0" aria-label="Timeline" />
+        </div>
+        <dl class="metrics">
+          <div><dt>solver</dt><dd>rigid circles</dd></div>
+          <div><dt>step</dt><dd>240 Hz</dd></div>
+          <div><dt id="metric-name">impacts</dt><dd id="metric">—</dd></div>
+          <div><dt>fingerprint</dt><dd id="fingerprint">—</dd></div>
+        </dl>
+      </footer>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

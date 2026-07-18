@@ -98,7 +98,7 @@ export function createStringTouchScene(overrides = {}) {
   };
 }
 
-function assertFiniteNumber(value, path, { minimum, maximum } = {}) {
+export function assertFiniteNumber(value, path, { minimum, maximum } = {}) {
   if (!Number.isFinite(value)) {
     throw new TypeError(`${path} must be a finite number.`);
   }
@@ -110,7 +110,7 @@ function assertFiniteNumber(value, path, { minimum, maximum } = {}) {
   }
 }
 
-export function validateScene(input) {
+export function validateStrandScene(input) {
   const scene = createStringTouchScene(input);
   if (scene.version !== 1) {
     throw new RangeError(`Unsupported scene version: ${scene.version}`);
@@ -192,8 +192,15 @@ export function validateScene(input) {
   if (typeof scene.payload.text !== "string" || scene.payload.text.length === 0) {
     throw new TypeError("payload.text must be a non-empty string.");
   }
+  if (scene.payload.terminalMass !== undefined) {
+    assertFiniteNumber(scene.payload.terminalMass, "payload.terminalMass", {
+      minimum: 0.1,
+      maximum: 50
+    });
+  }
 
   return scene;
 }
 
+export const validateScene = validateStrandScene;
 export const defaultStringTouchScene = createStringTouchScene();

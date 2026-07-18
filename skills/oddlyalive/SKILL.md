@@ -10,8 +10,12 @@ Use AI to author physical intent. Use the deterministic solver to author motion.
 ## Route the request
 
 1. Identify the object family and interaction.
-2. Use `string-touch` only for strings, garlands, hanging text, flexible stems,
-   or objects attached along independent strands.
+2. Route to the closest implemented recipe:
+   - `string-touch` for strings, garlands, hanging text, and flexible strands;
+   - `crystal-mobile` for weighted pendants and independent hanging objects;
+   - `ball-lab` for round bodies with different bounce/friction materials;
+   - `football-kick` for a timed hit, kick, or throw impulse;
+   - `shoe-splash` for a single prop disturbing a stylized water surface.
 3. Do not disguise unsupported rigid-body or cloth behavior as a strand scene.
    State that the recipe is not implemented or add the correct solver first.
 4. Read [references/scene-schema.md](references/scene-schema.md) when creating or
@@ -19,37 +23,37 @@ Use AI to author physical intent. Use the deterministic solver to author motion.
 5. Read [references/object-models.md](references/object-models.md) when deciding
    which physical model a new object needs.
 
-## Build a strand scene
+## Start from a recipe
 
 Create a starter:
 
 ```bash
-npx oddlyalive new my-motion \
-  --preset string-touch \
-  --text "MAKE ANYTHING FEEL ALIVE"
+npx oddlyalive list
+npx oddlyalive new my-motion --preset football-kick
 ```
 
-Edit `examples/string-touch/scene.json`. Preserve a fixed simulation rate and a
-seed. Express touch as a time-ordered pressure path. Do not author per-strand
-release timestamps.
+Read [references/recipes.md](references/recipes.md) before selecting parameters.
+Edit the generated `scene.json`. Preserve a fixed simulation rate and seed.
+For strand touch, express contact as a time-ordered pressure path and never
+author per-strand release timestamps.
 
 Validate before visual review:
 
 ```bash
-npx oddlyalive inspect examples/string-touch/scene.json
-npx oddlyalive simulate examples/string-touch/scene.json
+npx oddlyalive inspect examples/football-kick/scene.json
+npx oddlyalive simulate examples/football-kick/scene.json
 npm test
 ```
 
 Run the reference demo:
 
 ```bash
-npx oddlyalive play string-touch
+npx oddlyalive play
 ```
 
-Inspect the opening, first contact, maximum displacement, release, and final
-settle. Confirm that the catch is local, objects peel independently, anchors stay
-fixed, stretch remains bounded, and residual motion decays without freezing.
+Inspect the opening, first contact/impact, maximum displacement, rebounds, and
+final settle. Check the solver-specific diagnostics and confirm that no renderer
+mutates simulation state.
 
 ## Generate video
 

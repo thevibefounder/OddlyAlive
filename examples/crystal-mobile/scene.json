@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/scene.schema.json",
+  "version": 1,
+  "type": "strand-field",
+  "name": "OddlyAlive — Crystal Mobile",
+  "seed": 17,
+  "canvas": {
+    "width": 960,
+    "height": 540
+  },
+  "timing": {
+    "duration": 6.4,
+    "fps": 60,
+    "substeps": 4,
+    "preRoll": 2
+  },
+  "field": {
+    "columns": 13,
+    "rows": 14,
+    "originX": 390,
+    "originY": 96,
+    "spacingX": 38,
+    "spacingY": 24
+  },
+  "material": {
+    "gravity": 480,
+    "linearDrag": 0.76,
+    "quadraticDrag": 0.0026,
+    "lengthCompliance": 0.0000011,
+    "compressionCompliance": 0.00052,
+    "bendCompliance": 0.00072,
+    "maxStretch": 1.045
+  },
+  "contact": {
+    "radiusX": 58,
+    "radiusY": 37,
+    "maxStaticGrip": 6,
+    "captureStartRow": 5,
+    "captureEndRow": 12
+  },
+  "gesture": {
+    "type": "touch-path",
+    "points": [
+      { "time": 0.48, "x": -60, "y": 320, "pressure": 0 },
+      { "time": 0.68, "x": 250, "y": 328, "pressure": 0.72 },
+      { "time": 1.14, "x": 430, "y": 360, "pressure": 1 },
+      { "time": 1.72, "x": 665, "y": 391, "pressure": 0.98 },
+      { "time": 2.14, "x": 900, "y": 379, "pressure": 0.94 },
+      { "time": 2.38, "x": 934, "y": 368, "pressure": 0.88 },
+      { "time": 2.72, "x": 770, "y": 404, "pressure": 0.86 },
+      { "time": 3.12, "x": 590, "y": 414, "pressure": 0.65 },
+      { "time": 3.58, "x": 390, "y": 386, "pressure": 0.32 },
+      { "time": 4.08, "x": 155, "y": 352, "pressure": 0.04 },
+      { "time": 4.34, "x": 30, "y": 348, "pressure": 0 }
+    ]
+  },
+  "payload": {
+    "text": "✦",
+    "fontFamily": "ui-monospace, SFMono-Regular, Menlo, monospace",
+    "fontSize": 12,
+    "terminalMass": 6
+  },
+  "render": {
+    "background": "#f4eedc",
+    "ink": "#292720",
+    "accent": "#cc5f4a",
+    "filament": "rgba(42, 40, 34, 0.45)"
+  }
+}

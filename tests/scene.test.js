@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  createRigidBallsScene,
   createStringTouchScene,
+  createSurfaceWaveScene,
   sampleGesture,
   validateScene
 } from "../src/index.js";
@@ -13,6 +15,41 @@ test("the default scene validates and merges payload overrides", () => {
   assert.equal(scene.payload.text, "HELLO");
   assert.equal(scene.field.columns, 23);
   assert.equal(scene.timing.fps * scene.timing.substeps, 240);
+});
+
+test("the registry validates every implemented scene family", () => {
+  assert.equal(validateScene(createRigidBallsScene()).type, "rigid-balls");
+  assert.equal(validateScene(createSurfaceWaveScene()).type, "surface-wave");
+  assert.throws(
+    () => validateScene({ type: "cloth" }),
+    /Unsupported scene type/
+  );
+});
+
+test("rigid impulse references and wave sample counts are guarded", () => {
+  assert.throws(
+    () =>
+      validateScene(
+        createRigidBallsScene({
+          impulses: [
+            {
+              time: 0.2,
+              body: "missing",
+              impulseX: 1,
+              impulseY: 1
+            }
+          ]
+        })
+      ),
+    /unknown body/
+  );
+  assert.throws(
+    () =>
+      validateScene(
+        createSurfaceWaveScene({ surface: { samples: 4 } })
+      ),
+    /at least 16/
+  );
 });
 
 test("gesture sampling is smooth and bounded at both ends", () => {

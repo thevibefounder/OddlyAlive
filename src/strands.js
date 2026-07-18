@@ -130,8 +130,13 @@ export function simulateStrandField(inputScene, options = {}) {
     positionsX[index] = baseX[index];
     positionsY[index] = baseY[index];
     const terminal = smoothStep((row - (rows - 5)) / 4);
+    const terminalMass = scene.payload.terminalMass ?? 1;
     inverseMass[index] =
-      1 / (1 + terminal * (0.22 + correlatedNoise(column, 181) * 0.24));
+      1 /
+      (1 +
+        terminal *
+          (0.22 + correlatedNoise(column, 181) * 0.24) *
+          terminalMass);
   }
 
   for (let column = 0; column < columns; column += 1) {

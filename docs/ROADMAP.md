@@ -9,10 +9,14 @@
 
 ## v0.2 — Object recipes
 
-- Add rigid-body adapter and `football-kick`.
-- Add articulated `flower-touch` and `hanging-mobile`.
-- Add `pluck`, `drag`, `kick`, `shake`, and `drop` gesture primitives.
-- Add visual regression fixtures for every recipe.
+- [x] Add rigid-circle adapter and `football-kick`.
+- [x] Add weighted `crystal-mobile`.
+- [x] Add `ball-lab` material comparison.
+- [x] Add `shoe-splash` coupled wave recipe.
+- [x] Ship a unified five-example gallery.
+- [ ] Add articulated walking and `flower-touch`.
+- [ ] Add `pluck`, `drag`, `shake`, and reusable `drop` gesture primitives.
+- [ ] Add automated visual regression fixtures for every recipe.
 
 ## v0.3 — Prompt compiler
 

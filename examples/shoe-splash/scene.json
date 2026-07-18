@@ -1,0 +1,38 @@
+{
+  "$schema": "../../schemas/scene.schema.json",
+  "version": 1,
+  "type": "surface-wave",
+  "name": "OddlyAlive — Shoe Splash",
+  "seed": 31,
+  "canvas": { "width": 960, "height": 540 },
+  "timing": { "duration": 6.4, "fps": 60, "substeps": 4, "preRoll": 0 },
+  "surface": {
+    "x": 70,
+    "width": 820,
+    "restY": 330,
+    "samples": 161,
+    "waveSpeed": 172,
+    "damping": 2.4,
+    "coupling": 0.42
+  },
+  "world": {
+    "gravity": 720,
+    "airDrag": 0.06,
+    "waterDrag": 4.8,
+    "buoyancy": 29
+  },
+  "body": {
+    "id": "shoe",
+    "kind": "shoe",
+    "x": 500,
+    "y": 78,
+    "width": 174,
+    "height": 66,
+    "mass": 0.72,
+    "vx": -11,
+    "vy": 20,
+    "angle": -13,
+    "angularVelocity": 0.9,
+    "restitution": 0.18
+  }
+}

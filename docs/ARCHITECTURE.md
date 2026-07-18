@@ -17,11 +17,10 @@ OddlyAlive separates creative intent from physical truth.
 ## Alpha data flow
 
 ```text
-string-touch scene.json
+scene.json
         │
-        ├── validate schema
-        ├── create seeded material field
-        ├── pre-roll manufacturing slack
+        ├── validate by scene type
+        ├── select strand / rigid / wave solver
         ├── simulate at 240Hz
         └── sample states at output fps
                   │
@@ -41,12 +40,16 @@ string-touch scene.json
 
 ## Object-family boundary
 
-The strand solver is not a universal physics engine. Future recipes should use:
+No individual solver is a universal physics engine. Recipes currently use:
 
 - strand XPBD for strings, garlands, stems, and ropes;
-- cloth XPBD for connected surfaces;
-- rigid-body dynamics for balls and solid props;
-- joints and springs for mobiles, rackets, and mechanisms.
+- weighted strand terminals for crystals and pendants;
+- rigid-circle dynamics for balls and kickable round props;
+- a damped 1D surface coupled to one rigid prop for stylized water ripples.
+
+Future recipes should use cloth XPBD for connected surfaces and articulated
+joints plus inverse kinematics for walking bodies, rackets, flowers, and
+mechanisms.
 
 The prompt compiler selects a recipe. It must not force unrelated objects through
 the strand model simply because that solver already exists.

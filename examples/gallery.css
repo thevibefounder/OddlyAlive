@@ -1,0 +1,379 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #121211;
+  color: #f3efe7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: min(1180px, calc(100vw - 40px));
+  margin: 0 auto;
+  background:
+    radial-gradient(circle at 50% 12%, #302b24, transparent 38rem),
+    #121211;
+}
+
+body > header,
+body > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  color: #8f8a81;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wordmark {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #f3efe7;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.mark {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #ee6540;
+  border-radius: 50%;
+  box-shadow: inset 4px 0 0 #ee6540;
+}
+
+.hero {
+  padding: 74px 0 80px;
+  border-top: 1px solid #302e2a;
+  border-bottom: 1px solid #302e2a;
+}
+
+.hero > p,
+.card-copy p,
+.card-next p {
+  margin: 0 0 12px;
+  color: #8f8a81;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+h1 {
+  margin: 0;
+  max-width: 100%;
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.84;
+}
+
+h1 em {
+  color: #ee6540;
+  font-style: normal;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 26px;
+  margin-top: 34px;
+  color: #b3aea4;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 14px 0 0;
+}
+
+.card {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid #3b3832;
+  border-radius: 4px;
+  background: #ede5d3;
+  color: #20201d;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+a.card:hover {
+  z-index: 2;
+  border-color: #ee6540;
+  transform: translateY(-3px);
+}
+
+.preview {
+  position: absolute;
+  inset: 0;
+}
+
+.card-copy {
+  position: absolute;
+  right: 28px;
+  bottom: 25px;
+  left: 28px;
+  z-index: 3;
+}
+
+.card-copy p {
+  margin-bottom: 7px;
+  color: #716c62;
+  font-size: 8px;
+}
+
+.card-copy h2,
+.card-next h2 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 3.3vw, 46px);
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.card-copy span,
+.card-next span {
+  color: #716c62;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+}
+
+.strings {
+  background: linear-gradient(135deg, #efe7d5, #ded5c3);
+}
+
+.strings span {
+  position: relative;
+  display: inline-block;
+  width: 1px;
+  height: 210px;
+  margin-left: 14%;
+  background: #2c2a25;
+  transform-origin: top;
+}
+
+.strings span:nth-child(1) {
+  transform: rotate(-19deg);
+}
+
+.strings span:nth-child(2) {
+  transform: rotate(-10deg);
+}
+
+.strings span:nth-child(3) {
+  transform: rotate(3deg);
+}
+
+.strings span:nth-child(4) {
+  transform: rotate(11deg);
+}
+
+.strings span:nth-child(5) {
+  transform: rotate(20deg);
+}
+
+.strings span::after {
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  content: "●";
+  color: #ee6540;
+  font-size: 8px;
+}
+
+.crystals {
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  padding-top: 38px;
+  background: #f2ebdc;
+}
+
+.crystals i {
+  position: relative;
+  width: 1px;
+  height: 170px;
+  background: #34312a;
+}
+
+.crystals i::after {
+  position: absolute;
+  bottom: -25px;
+  left: -13px;
+  width: 27px;
+  height: 36px;
+  background: #83c5be;
+  clip-path: polygon(50% 0, 100% 28%, 76% 82%, 50% 100%, 22% 82%, 0 28%);
+  content: "";
+}
+
+.crystals i:nth-child(2)::after,
+.crystals i:nth-child(5)::after {
+  background: #e29578;
+}
+
+.crystals i:nth-child(3)::after {
+  background: #b8c0ff;
+}
+
+.balls {
+  background: #e8dfcd;
+}
+
+.balls i {
+  position: absolute;
+  display: block;
+  border: 2px solid #22211e;
+  border-radius: 50%;
+}
+
+.baseball {
+  top: 72px;
+  left: 16%;
+  width: 54px;
+  height: 54px;
+  background: #f4efe4;
+}
+
+.basketball {
+  top: 42px;
+  left: 42%;
+  width: 88px;
+  height: 88px;
+  background:
+    linear-gradient(90deg, transparent 48%, #222 48% 52%, transparent 52%),
+    #e66b2d;
+}
+
+.football {
+  top: 94px;
+  right: 13%;
+  width: 68px;
+  height: 68px;
+  background:
+    radial-gradient(circle, #20201d 0 18%, transparent 19%),
+    #f6f3e9;
+}
+
+.kick {
+  background:
+    linear-gradient(0deg, #769a58 0 28%, transparent 28%),
+    #dbe5c9;
+}
+
+.kick i {
+  position: absolute;
+  top: 80px;
+  left: 42%;
+  width: 72px;
+  height: 72px;
+  border: 2px solid #20201d;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #20201d 0 18%, transparent 19%),
+    #f6f3e9;
+}
+
+.kick span {
+  position: absolute;
+  right: 70px;
+  bottom: 100px;
+  width: 118px;
+  height: 170px;
+  border: 5px solid #f3efdf;
+  border-bottom: 0;
+}
+
+.wave {
+  background:
+    linear-gradient(0deg, #80c7d4 0 42%, transparent 42%),
+    #e7efe9;
+}
+
+.wave i {
+  position: absolute;
+  top: 75px;
+  left: 43%;
+  width: 130px;
+  height: 50px;
+  border: 2px solid #20201d;
+  border-radius: 60% 18% 36% 24%;
+  background: #f4efe3;
+  transform: rotate(-12deg);
+}
+
+.wave span {
+  position: absolute;
+  right: 8%;
+  bottom: 40%;
+  left: 8%;
+  height: 18px;
+  border-top: 3px solid #1e6f7b;
+  border-radius: 50%;
+}
+
+.card-next {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 28px;
+  border-style: dashed;
+  background: #191817;
+  color: #f3efe7;
+}
+
+.card-next b {
+  color: #302e2a;
+  font-size: 150px;
+  letter-spacing: -0.09em;
+  line-height: 0.72;
+}
+
+body > footer {
+  padding: 22px 0;
+}
+
+body > footer strong {
+  color: #ee6540;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  body {
+    width: min(100% - 20px, 1180px);
+  }
+
+  .hero {
+    padding: 52px 0;
+  }
+
+  .hero-meta {
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 320px;
+  }
+}
