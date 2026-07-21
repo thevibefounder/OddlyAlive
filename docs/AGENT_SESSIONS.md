@@ -56,3 +56,95 @@ Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
   account boundary instead of attempting to bypass login or 2FA.
 - **Next:** Authenticate npm interactively, run
   `npm publish --access public --tag alpha`, and verify the published tarball.
+
+## 2026-07-18 — Agent.md-Codex — Local demo-video review package
+
+- **Did:** Built a deterministic HyperFrames demo composition from the five
+  real OddlyAlive recipes, rendered a 32-second 60fps master, cut five exact
+  6.4-second clips, generated the README preview GIF, and verified every MP4
+  with full decode, stream, duration, frame-count, and checksum checks.
+- **Changed:** Added `videos/oddlyalive-demos/`, the root README preview and
+  rebuild path, `docs/QUICKSTART.md`, `docs/DEMO-VIDEOS.md`,
+  `scripts/render-demo-videos.sh`, `scripts/verify-demo-videos.mjs`, demo npm
+  scripts, and generated local review artifacts ignored by Git.
+- **Learned:** Bundling directly from the canonical `src/` keeps the video
+  reproducible without a stale engine copy; the encoded review also caught a
+  pale-on-pitch footer that static design review had missed. The final
+  composition passes 304/304 text contrast checks.
+- **Next:** Get explicit visual approval on the local master and five clips;
+  only then commit the source/docs/GIF and separately decide whether to upload
+  the MP4s as release assets. Do not push or publish npm yet.
+
+## 2026-07-19 — Agent.md-Codex — Material-realism preview pass
+
+- **Did:** Rebuilt all five local demo renderers so the simulated bodies read
+  as constructed objects instead of instructional icons. Added physical rail
+  hardware, braided cords, eyelets and knot tails; sharp faceted crystals with
+  bails and glass beads; material-specific baseball, basketball and football
+  surfaces; a dimensional cleat, pitch and deforming goal net; and a complete
+  sneaker, reflection, foam, spray and water-caustic treatment. Captured and
+  inspected contact sheets at rest, contact, impact and settle.
+- **Changed:** `src/svg-renderer.js`, `src/crystal-renderer.js`,
+  `src/rigid-renderer.js`, `src/wave-renderer.js`,
+  `videos/oddlyalive-demos/index.html`,
+  `videos/oddlyalive-demos/app.bundle.js`, local ignored review snapshots, and
+  the demo project's HyperFrames pin from `0.7.57` to `0.7.64`.
+- **Learned:** The original physics was credible but flat silhouette language
+  made it feel synthetic. Material construction plus event-specific secondary
+  motion is the decisive layer: the final football sequence now enters the
+  goal, forms a local net pocket, and rebounds; the crystal blur inherited from
+  a group filter was also caught and removed during close-up QA.
+- **Next:** Review all five scenes in the live HyperFrames Studio. If the
+  realism direction is approved, render and verify replacement MP4s, then
+  commit the already-prepared source/docs without pushing until the user
+  explicitly authorizes Git publication.
+
+## 2026-07-19 — Agent.md-Codex — Photographic object asset pass
+
+- **Did:** Replaced the diagram-like hero objects in all five HyperFrames demos
+  with generated, high-resolution photographic cutouts while preserving the
+  deterministic strand, rigid-body, net-contact, and surface-wave simulations.
+  The new pass includes enamel-and-brass letter charms, faceted crystal
+  pendants, a baseball, basketball, football, kicking cleat and lower leg, and
+  a canvas sneaker, all with transparent mattes and inspected edge quality.
+- **Changed:** Added the provenance-tracked image library under
+  `videos/oddlyalive-demos/.media/images/` and
+  `videos/oddlyalive-demos/assets/images/photoreal/`; wired the assets through
+  `videos/oddlyalive-demos/app.js`; updated all four SVG renderers; rebuilt the
+  browser bundle; and captured a complete `review/photoreal-v2/` proof set.
+- **Learned:** Procedural surface detail cannot rescue an object whose base
+  silhouette still reads as an illustration. Photographic material cues
+  provide the recognition and texture fidelity, while deterministic SVG
+  remains the right layer for deformation, shadows, strings, water, and nets.
+  The combined approach passed 15/15 engine tests, zero runtime or motion
+  errors, and 301/301 WCAG AA contrast checks.
+- **Next:** Get explicit approval in the live Studio at
+  `http://localhost:3019`; after approval, render and decode-verify the
+  replacement MP4s. Do not commit, push, publish npm, or replace the previously
+  approved videos until that visual approval is given.
+
+## 2026-07-21 — Agent.md-Codex — Canonical GitHub clone migration
+
+- **Did:** Made `OddlyAlive checkout` the canonical local
+  repository and migrated the intentional engine, documentation, render
+  scripts, HyperFrames project, media ledger, and final transparent
+  photographic assets from the temporary release worktree. Excluded stale
+  renders, review snapshots, generated bundles, dependency folders, chroma
+  intermediates, and the accidental `* 2.js` renderer copies.
+- **Changed:** Updated the canonical clone with the pending source/docs/demo
+  work, corrected repository links to `thevibefounder/OddlyAlive`, removed the
+  stale unshipped GIF reference, consolidated the publishable image assets
+  under `assets/photoreal/`, wired both the public gallery and HyperFrames demo
+  to that shared library, corrected raster/SVG documentation, and upgraded the
+  demo project's pinned HyperFrames CLI from `0.7.64` to `0.7.66`; the old
+  worktree remains untouched as a safety copy.
+- **Learned:** The migrated project is healthy in its canonical location: all
+  15 engine tests pass, npm reports zero installed dependency vulnerabilities,
+  and HyperFrames reports zero runtime or motion errors with 301/301 WCAG AA
+  contrast checks. All five public gallery routes and all seven runtime image
+  assets return HTTP 200 from the local server. The high-quality demo assets
+  are present, but final MP4s remain intentionally unrendered and unpushed.
+- **Next:** Obtain visual approval on the canonical public gallery and
+  HyperFrames preview, then render and verify replacement media. After that,
+  add release CI/hygiene, clean-room test the npm tarball, and request explicit
+  authorization before pushing or publishing.

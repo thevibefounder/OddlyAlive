@@ -6,11 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thevibefounderdotcom/OddlyAlive.git"
+    "url": "git+https://github.com/thevibefounder/OddlyAlive.git"
   },
-  "homepage": "https://github.com/thevibefounderdotcom/OddlyAlive#readme",
+  "homepage": "https://github.com/thevibefounder/OddlyAlive#readme",
   "bugs": {
-    "url": "https://github.com/thevibefounderdotcom/OddlyAlive/issues"
+    "url": "https://github.com/thevibefounder/OddlyAlive/issues"
   },
   "publishConfig": {
     "access": "public",
@@ -27,12 +27,27 @@
     "./waves": "./src/surface-wave.js"
   },
   "files": [
+    "assets",
     "bin",
+    "docs/ARCHITECTURE.md",
+    "docs/DEMO-VIDEOS.md",
+    "docs/QUICKSTART.md",
+    "docs/ROADMAP.md",
     "examples",
     "schemas",
     "scripts",
     "skills",
     "src",
+    "videos/oddlyalive-demos/BRIEF.md",
+    "videos/oddlyalive-demos/DEMO-PLAN.md",
+    "videos/oddlyalive-demos/README.md",
+    "videos/oddlyalive-demos/app.js",
+    "videos/oddlyalive-demos/hyperframes.json",
+    "videos/oddlyalive-demos/index.html",
+    "videos/oddlyalive-demos/meta.json",
+    "videos/oddlyalive-demos/package-lock.json",
+    "videos/oddlyalive-demos/package.json",
+    "videos/oddlyalive-demos/prepare-assets.mjs",
     "LICENSE",
     "README.md"
   ],
@@ -41,6 +56,8 @@
     "demo": "node ./bin/oddlyalive.js play",
     "inspect": "node ./bin/oddlyalive.js inspect ./examples/string-touch/scene.json",
     "simulate": "node ./bin/oddlyalive.js simulate ./examples/string-touch/scene.json",
+    "demos:render": "sh ./scripts/render-demo-videos.sh",
+    "demos:verify": "node ./scripts/verify-demo-videos.mjs",
     "test": "node --test",
     "check": "npm run test && npm run inspect && npm pack --dry-run --cache ./.oddlyalive/npm-cache"
   },

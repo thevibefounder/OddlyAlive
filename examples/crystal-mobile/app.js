@@ -13,7 +13,8 @@ const scene = validateScene(await response.json());
 const simulation = simulateScene(scene);
 const renderer = createCrystalRenderer(
   document.querySelector("#motion"),
-  simulation
+  simulation,
+  { pendantHref: "../../assets/photoreal/crystal.png" }
 );
 
 mountPlayer({

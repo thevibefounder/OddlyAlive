@@ -14,7 +14,14 @@ const simulation = simulateScene(scene);
 const renderer = createRigidBallRenderer(
   document.querySelector("#motion"),
   simulation,
-  { mode: "kick", labels: false }
+  {
+    mode: "kick",
+    labels: false,
+    ballAssets: {
+      football: "../../assets/photoreal/soccer-ball.png"
+    },
+    kickActorHref: "../../assets/photoreal/kicking-cleat.png"
+  }
 );
 
 mountPlayer({

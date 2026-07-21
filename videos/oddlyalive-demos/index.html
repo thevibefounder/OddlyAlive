@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <style>
+      :root {
+        --shell: #171714;
+        --ink: #20201d;
+        --accent: #8b351f;
+        --paper: #f0e7d3;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--shell);
+      }
+
+      body {
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--shell);
+      }
+
+      .clip {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        padding: 46px;
+      }
+
+      .poster {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--scene-paper);
+        border: 2px solid rgb(255 255 255 / 9%);
+        box-shadow:
+          0 18px 70px rgb(0 0 0 / 28%),
+          inset 0 0 90px rgb(80 64 36 / 5%);
+      }
+
+      .poster::after {
+        position: absolute;
+        inset: 0;
+        z-index: 4;
+        pointer-events: none;
+        content: "";
+        opacity: 0.32;
+        background-image:
+          repeating-radial-gradient(
+            circle at 20% 30%,
+            rgb(25 23 18 / 9%) 0 0.7px,
+            transparent 0.8px 4px
+          );
+        background-size: 9px 11px;
+        mix-blend-mode: multiply;
+      }
+
+      .motion {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+
+      .eyebrow,
+      .scene-number,
+      .footer,
+      .recipe-chip {
+        position: absolute;
+        z-index: 5;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        top: 58px;
+        left: 62px;
+        font-size: 18px;
+        color: var(--accent);
+      }
+
+      h1 {
+        position: absolute;
+        top: 116px;
+        left: 58px;
+        z-index: 5;
+        max-width: 780px;
+        font-size: 82px;
+        font-stretch: condensed;
+        font-weight: 900;
+        letter-spacing: -0.062em;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .scene-number {
+        top: 60px;
+        right: 62px;
+        font-size: 17px;
+      }
+
+      .recipe-chip {
+        right: 62px;
+        bottom: 58px;
+        padding: 12px 16px 10px;
+        color: var(--scene-paper);
+        font-size: 14px;
+        background: var(--ink);
+      }
+
+      .footer {
+        bottom: 62px;
+        left: 62px;
+        max-width: 720px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .footer strong {
+        color: var(--accent);
+      }
+
+      .kick .eyebrow,
+      .kick h1,
+      .kick .scene-number {
+        color: #f3efdf;
+      }
+
+      .kick .recipe-chip {
+        color: #182217;
+        background: #f3efdf;
+      }
+
+      .kick .footer,
+      .kick .footer strong {
+        color: #f7f0d8;
+      }
+
+      #shoe-splash .footer {
+        color: #11110f;
+      }
+
+      #shoe-splash .footer strong {
+        color: #2d0c06;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-18cd" id="root" data-composition-id="oddlyalive-demos" data-start="0" data-duration="32" data-width="1920" data-height="1080" data-fps="60">
+      <section data-hf-id="hf-z3d1" id="string-touch" class="clip" data-start="0" data-duration="6.4" data-track-index="1" style="--scene-paper: #f0e7d3">
+        <div data-hf-id="hf-mhuf" class="poster">
+          <svg data-hf-id="hf-2fmn" id="motion-string-touch" class="motion" viewBox="0 0 960 540" aria-label="String Touch physics demo" />
+          <p data-hf-id="hf-xjgn" class="eyebrow">OddlyAlive / Recipe 01</p>
+          <h1 data-hf-id="hf-6fv6">String<br data-hf-id="hf-x5px">Touch</h1>
+          <p data-hf-id="hf-a8yy" class="scene-number">01 / 05</p>
+          <p data-hf-id="hf-b4yf" class="footer">
+            Local contact → static grip → slip → peel → <strong data-hf-id="hf-7ufq">alive settle</strong>
+          </p>
+          <p data-hf-id="hf-3e1h" class="recipe-chip">strand-field</p>
+        </div>
+      </section>
+
+      <section data-hf-id="hf-g8rr" id="crystal-mobile" class="clip" data-start="6.4" data-duration="6.4" data-track-index="1" style="--scene-paper: #f4eedc">
+        <div data-hf-id="hf-uod3" class="poster">
+          <svg data-hf-id="hf-4jl5" id="motion-crystal-mobile" class="motion" viewBox="0 0 960 540" aria-label="Crystal Mobile physics demo" />
+          <p data-hf-id="hf-x55m" class="eyebrow">OddlyAlive / Recipe 02</p>
+          <h1 data-hf-id="hf-9dqe">Crystal<br data-hf-id="hf-rsrt">Mobile</h1>
+          <p data-hf-id="hf-ibv5" class="scene-number">02 / 05</p>
+          <p data-hf-id="hf-56s8" class="footer">
+            Weighted payloads → coupled motion → <strong data-hf-id="hf-tbbi">irregular settle</strong>
+          </p>
+          <p data-hf-id="hf-40sp" class="recipe-chip">strand-field</p>
+        </div>
+      </section>
+
+      <section data-hf-id="hf-k891" id="ball-lab" class="clip" data-start="12.8" data-duration="6.4" data-track-index="1" style="--scene-paper: #eee4cf">
+        <div data-hf-id="hf-ua22" class="poster">
+          <svg data-hf-id="hf-pqdz" id="motion-ball-lab" class="motion" viewBox="0 0 960 540" aria-label="Ball Lab physics demo" />
+          <p data-hf-id="hf-wqul" class="eyebrow">OddlyAlive / Recipe 03</p>
+          <h1 data-hf-id="hf-nhn6">Ball<br data-hf-id="hf-szow">Lab</h1>
+          <p data-hf-id="hf-jfks" class="scene-number">03 / 05</p>
+          <p data-hf-id="hf-fc1i" class="footer">
+            Mass + restitution + friction → <strong data-hf-id="hf-12x9">distinct material feel</strong>
+          </p>
+          <p data-hf-id="hf-1yh8" class="recipe-chip">rigid-balls</p>
+        </div>
+      </section>
+
+      <section data-hf-id="hf-8gjv" id="football-kick" class="clip kick" data-start="19.2" data-duration="6.4" data-track-index="1" style="--scene-paper: #2f675f">
+        <div data-hf-id="hf-tvr1" class="poster">
+          <svg data-hf-id="hf-w50h" id="motion-football-kick" class="motion" viewBox="0 0 960 540" aria-label="Football Kick physics demo" />
+          <p data-hf-id="hf-zizs" class="eyebrow">OddlyAlive / Recipe 04</p>
+          <h1 data-hf-id="hf-gdlt">Football<br data-hf-id="hf-sldv">Kick</h1>
+          <p data-hf-id="hf-qvgj" class="scene-number">04 / 05</p>
+          <p data-hf-id="hf-4gc8" class="footer">
+            Timed impulse → spin → bounce → <strong data-hf-id="hf-wvbs">natural energy loss</strong>
+          </p>
+          <p data-hf-id="hf-zvms" class="recipe-chip">rigid-balls</p>
+        </div>
+      </section>
+
+      <section data-hf-id="hf-kx1q" id="shoe-splash" class="clip" data-start="25.6" data-duration="6.4" data-track-index="1" style="--scene-paper: #dceae5">
+        <div data-hf-id="hf-wnw8" class="poster">
+          <svg data-hf-id="hf-l761" id="motion-shoe-splash" class="motion" viewBox="0 0 960 540" aria-label="Shoe Splash physics demo" />
+          <p data-hf-id="hf-z4or" class="eyebrow">OddlyAlive / Recipe 05</p>
+          <h1 data-hf-id="hf-v3n2">Shoe<br data-hf-id="hf-qluq">Splash</h1>
+          <p data-hf-id="hf-jriu" class="scene-number">05 / 05</p>
+          <p data-hf-id="hf-9o3c" class="footer">
+            Entry + buoyancy + wave coupling → <strong data-hf-id="hf-tzkj">responsive surface</strong>
+          </p>
+          <p data-hf-id="hf-mmxr" class="recipe-chip">surface-wave</p>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["oddlyalive-demos"] =
+        window.__timelines["oddlyalive-demos"] || null;
+    </script>
+    <script src="./app.bundle.js"></script>
+  </body>
+</html>

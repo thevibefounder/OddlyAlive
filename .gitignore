@@ -5,3 +5,10 @@ dist/
 *.tgz
 .DS_Store
 .oddlyalive/
+videos/**/app.bundle.js
+videos/**/engine/
+videos/**/.media/
+videos/**/assets/images/photoreal/
+videos/**/renders/
+videos/**/review/
+videos/**/snapshots/

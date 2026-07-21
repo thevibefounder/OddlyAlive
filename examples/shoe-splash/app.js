@@ -13,7 +13,8 @@ const scene = validateScene(await response.json());
 const simulation = simulateScene(scene);
 const renderer = createSurfaceWaveRenderer(
   document.querySelector("#motion"),
-  simulation
+  simulation,
+  { shoeHref: "../../assets/photoreal/sneaker.png" }
 );
 
 mountPlayer({

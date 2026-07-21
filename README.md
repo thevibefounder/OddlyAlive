@@ -16,14 +16,29 @@ npx oddlyalive play
 
 No runtime dependencies. No cloud account. No animation keyframes.
 
+## Start in 60 seconds
+
+```bash
+git clone https://github.com/thevibefounder/OddlyAlive.git
+cd OddlyAlive
+npm start
+```
+
+Open the printed local URL and choose a recipe. Nothing is uploaded; the
+simulation and SVG rendering run locally.
+
+For the full install, customization, and scene-authoring path, read
+[`docs/QUICKSTART.md`](docs/QUICKSTART.md).
+
 ## Try the repository
 
 ```bash
 npm start
 ```
 
-Then open the printed local URL. The gallery contains five SVG examples,
-simulated at a fixed 240Hz and rendered at 60fps.
+Then open the printed local URL. The gallery contains five SVG-rendered physics
+examples with local high-resolution object cutouts, simulated at a fixed 240Hz
+and rendered at 60fps.
 
 ## Built-in recipes
 
@@ -115,6 +130,20 @@ console.log(result.diagnostics);
 See `examples/` for the complete browser gallery and
 `docs/ARCHITECTURE.md` for the separation between AI, physics, and rendering.
 
+## Rebuild the demo videos
+
+With Node 20+ and FFmpeg installed:
+
+```bash
+npm run demos:render
+npm run demos:verify
+```
+
+This produces a 32-second reel, five 6.4-second recipe clips, and the README
+GIF from the same deterministic simulations. See
+[`docs/DEMO-VIDEOS.md`](docs/DEMO-VIDEOS.md) for output paths, preview commands,
+and the review-before-publish protocol.
+
 ## Status
 
 `0.2.0-alpha.1` is a focused technical preview. The five listed recipes are
@@ -123,4 +152,5 @@ the broader “animate any object” prompt compiler remain roadmap items.
 
 ## License
 
-MIT. Example artwork is original unless its local provenance file says otherwise.
+MIT. Example artwork is original or generated specifically for this project;
+see [`assets/photoreal/PROVENANCE.md`](assets/photoreal/PROVENANCE.md).

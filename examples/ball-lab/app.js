@@ -14,7 +14,14 @@ const simulation = simulateScene(scene);
 const renderer = createRigidBallRenderer(
   document.querySelector("#motion"),
   simulation,
-  { mode: "lab" }
+  {
+    mode: "lab",
+    ballAssets: {
+      baseball: "../../assets/photoreal/baseball.png",
+      basketball: "../../assets/photoreal/basketball.png",
+      football: "../../assets/photoreal/soccer-ball.png"
+    }
+  }
 );
 
 mountPlayer({

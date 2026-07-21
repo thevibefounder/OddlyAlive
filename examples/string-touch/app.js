@@ -17,7 +17,9 @@ await new Promise((resolve) => requestAnimationFrame(resolve));
 const rawScene = await fetch("./scene.json").then((response) => response.json());
 const scene = validateScene(rawScene);
 const simulation = simulateScene(scene);
-const renderer = createSvgRenderer(svg, simulation);
+const renderer = createSvgRenderer(svg, simulation, {
+  glyphCharmHref: "../../assets/photoreal/letter-charm-square.png"
+});
 const durationMs = scene.timing.duration * 1000;
 const lastFrame = simulation.frames.length - 1;
 
