@@ -2,6 +2,9 @@
 
 **Make anything feel alive.**
 
+[Project page](https://thevibefounder.com/opensource/oddlyalive/) ·
+[Source](https://github.com/thevibefounder/OddlyAlive)
+
 OddlyAlive is an open-source toolkit for natural, deterministic object motion.
 Describe the physical setup once; the solver produces every frame.
 
@@ -11,10 +14,6 @@ solver families: flexible strands, rigid balls, and a rigid prop coupled to a
 damped wave surface.
 
 ![OddlyAlive string-touch recipe](docs/assets/oddlyalive-string-touch.gif)
-
-```bash
-npx oddlyalive play
-```
 
 No runtime dependencies. No cloud account. No animation keyframes.
 

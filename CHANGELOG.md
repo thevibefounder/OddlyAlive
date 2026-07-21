@@ -22,6 +22,7 @@ All notable changes to OddlyAlive are documented here. This project follows
 - Rebuilt the strand, crystal, rigid-body, football, and wave renderers around
   hybrid photographic materials and simulated SVG deformation.
 - Consolidated demo assets under `assets/photoreal/` with explicit provenance.
+- Set the canonical package homepage to the public OddlyAlive project showcase.
 
 ### Fixed
 

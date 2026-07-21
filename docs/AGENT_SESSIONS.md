@@ -246,3 +246,22 @@ Append-only. Follow the TheVibeFounder workspace's
 - **Next:** Submit the prepared GitHub Support request for cached-view removal
   and server-side garbage collection, then confirm the old commit IDs stop
   resolving before publishing alpha.2.
+
+## 2026-07-21 — Release Agent-Codex — Launch open-source project pages
+
+- **Did:** Built and launched the new TheVibeFounder open-source catalog plus a
+  dedicated OddlyAlive showcase, using the approved deterministic motion media,
+  provenance-tracked recipe art, and a bespoke social card. Verified both
+  custom-domain routes live, then added the canonical project URL to this
+  package and README. Removed the premature `npx` quick command after confirming
+  the package is not yet available from the public npm registry.
+- **Changed:** Updated `package.json`, `README.md`, `CHANGELOG.md`, and this
+  session log. The companion website shipped as commit `d15676a` in the
+  TheVibeFounder website repository.
+- **Learned:** Even a documentation-only package change alters release bytes.
+  The refreshed 86-file alpha.2 tarball passes 17/17 tests and now has SHA-256
+  `ac3a92cfdaf2d6d350524d411321418835ac3d04e6e30d57bdcbc10d53a9f802`.
+- **Next:** Restore GitHub CLI authentication to set the repository sidebar
+  website field, submit the already drafted cache-purge request after explicit
+  approval, and use the refreshed tarball checksum for the eventual alpha.2
+  release.
