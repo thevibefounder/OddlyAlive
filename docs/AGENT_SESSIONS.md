@@ -163,3 +163,27 @@ Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
 - **Next:** Review the five scenes at normal speed in Studio and approve or
   request revisions. Only after explicit approval, render and decode-verify the
   final photographic MP4s and GIF; do not push or publish npm yet.
+
+## 2026-07-21 — Release Agent-Codex — Alpha.2 release candidate
+
+- **Did:** After explicit visual approval, rendered the 32-second photographic
+  master, cut all five 6.4-second recipe clips, rebuilt the README GIF, decoded
+  every MP4, recorded SHA-256 checksums, and inspected a 20-frame encoded
+  contact sheet. Added CI and open-source governance files, deterministic visual
+  fixtures, bumped the package to `0.2.0-alpha.2`, and installed/tested the final
+  tarball in a clean temporary consumer. The clean-room browser pass exposed
+  and then verified a fix for missing photographic assets in generated projects.
+- **Changed:** Added `.github/` workflows/templates, `CHANGELOG.md`,
+  `CONTRIBUTING.md`, `SECURITY.md`, `package-lock.json`, the approved README GIF,
+  visual baseline tooling/tests, and release checksums; updated the package,
+  README, roadmap, CLI generator, local server MIME types, and CLI regression
+  tests.
+- **Learned:** Source-tree tests were not enough to prove the project generator:
+  only installing the packed artifact and opening its generated recipe revealed
+  that photoreal PNGs were omitted. The fixed generator now copies provenance
+  and required assets, serves PNGs as `image/png`, mounts the expected SVG scene,
+  and reports no browser errors.
+- **Next:** Request explicit authorization to merge and push the release
+  candidate, create the new `v0.2.0-alpha.2` prerelease without moving the
+  existing alpha.1 tag, upload the six verified MP4s, and publish npm under the
+  `alpha` tag after interactive authentication.

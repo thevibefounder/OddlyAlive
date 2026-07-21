@@ -1,6 +1,6 @@
 {
   "name": "oddlyalive",
-  "version": "0.2.0-alpha.1",
+  "version": "0.2.0-alpha.2",
   "description": "Deterministic, physics-driven object motion from simple scene recipes.",
   "type": "module",
   "license": "MIT",
@@ -38,6 +38,7 @@
     "scripts",
     "skills",
     "src",
+    "tests",
     "videos/oddlyalive-demos/BRIEF.md",
     "videos/oddlyalive-demos/DEMO-PLAN.md",
     "videos/oddlyalive-demos/README.md",
@@ -48,14 +49,19 @@
     "videos/oddlyalive-demos/package-lock.json",
     "videos/oddlyalive-demos/package.json",
     "videos/oddlyalive-demos/prepare-assets.mjs",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "SECURITY.md"
   ],
   "scripts": {
     "start": "node ./bin/oddlyalive.js play",
     "demo": "node ./bin/oddlyalive.js play",
     "inspect": "node ./bin/oddlyalive.js inspect ./examples/string-touch/scene.json",
     "simulate": "node ./bin/oddlyalive.js simulate ./examples/string-touch/scene.json",
+    "fixtures:update": "node ./scripts/update-visual-fixtures.mjs",
+    "test:visual": "node --test ./tests/visual-fixtures.test.js",
     "demos:render": "sh ./scripts/render-demo-videos.sh",
     "demos:verify": "node ./scripts/verify-demo-videos.mjs",
     "test": "node --test",

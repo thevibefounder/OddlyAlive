@@ -10,6 +10,8 @@ TheVibeFounder’s city-postcard series. It now ships three small, inspectable
 solver families: flexible strands, rigid balls, and a rigid prop coupled to a
 damped wave surface.
 
+![OddlyAlive string-touch recipe](docs/assets/oddlyalive-string-touch.gif)
+
 ```bash
 npx oddlyalive play
 ```
@@ -129,6 +131,7 @@ console.log(result.diagnostics);
 
 See `examples/` for the complete browser gallery and
 `docs/ARCHITECTURE.md` for the separation between AI, physics, and rendering.
+Contributions are welcome; start with [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Rebuild the demo videos
 
@@ -146,7 +149,7 @@ and the review-before-publish protocol.
 
 ## Status
 
-`0.2.0-alpha.1` is a focused technical preview. The five listed recipes are
+`0.2.0-alpha.2` is a focused technical preview. The five listed recipes are
 real and deterministic; full fluid dynamics, cloth, articulated walking, and
 the broader “animate any object” prompt compiler remain roadmap items.
 

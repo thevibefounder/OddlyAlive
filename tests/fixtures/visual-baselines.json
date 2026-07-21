@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "description": "Approved deterministic motion and visual-source baselines. Update only after visual review.",
+  "sceneFingerprints": {
+    "string-touch": "4c56b4e5",
+    "crystal-mobile": "04e45087",
+    "ball-lab": "c3b9e206",
+    "football-kick": "2179d5a7",
+    "shoe-splash": "438ccfca"
+  },
+  "fileSha256": {
+    "assets/photoreal/baseball.png": "0d8e6be0dc67ad577a40772d6d6b17cd70732d15f57b1184500c9676abd387b6",
+    "assets/photoreal/basketball.png": "5c5c8e714525066a46fa8f694f1ada3312f202b6bd8e9059015c4b6acf92f6af",
+    "assets/photoreal/crystal.png": "92ea76d9d9fb24899510764670eb0d88887a70822d6689fe5df4f374a2c62903",
+    "assets/photoreal/kicking-cleat.png": "9151599c10eb26e3250e9f7c4921e6e4b44dd8286a19a61fa6ae09a79dfa673f",
+    "assets/photoreal/letter-charm-square.png": "b2bccab5e482bfa86c0f71ae70f6d5cef44ab1d892135384c27a6f763bd73cae",
+    "assets/photoreal/letter-charm.png": "e20eb93043feb7bf307a432db53cf00af0997c3d17d6e59c070f835375b87364",
+    "assets/photoreal/sneaker.png": "a6736fbdc0120cbd95cdb6157522e980226c9dc53e7d9af31e1817df180c6da9",
+    "assets/photoreal/soccer-ball.png": "38e85510f7380e8334f2f6562aad55240132af21787de8746d2698e000bcf542",
+    "src/crystal-renderer.js": "e63ead4940827c4a47f685ce1657b2e0f12ef721ad533f3659fd5d5edcbc8059",
+    "src/rigid-renderer.js": "39e1fe69fa84a3c9ec499554b8551655443988d18c6f357db6e86109288976b3",
+    "src/svg-renderer.js": "c5848d44d7560a23b32db26503b231f2482a41dbcbb6f1bab01e6a3e615ece3a",
+    "src/wave-renderer.js": "5c8d1d2aff3dbfe8aede895ddf1cce8317b31a962ccc70ff569bfe2125cc384d",
+    "videos/oddlyalive-demos/app.js": "393414f946090b67a2dec2a2bf254d4b8fd4a2b74d4fdeb1022da4d005841a68",
+    "videos/oddlyalive-demos/index.html": "86bf5c2502a67c9e70154ec11f9bcb79bb96344f8cba85c6b354ad5b0e8a5107"
+  }
+}

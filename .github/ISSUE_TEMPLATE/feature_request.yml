@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose a focused solver, renderer, recipe, or tooling improvement.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What object behavior or workflow is currently hard to express?
+    validations:
+      required: true
+  - type: dropdown
+    id: family
+    attributes:
+      label: Closest physical family
+      options:
+        - Strands or hanging payloads
+        - Rigid circular bodies
+        - Coupled wave surfaces
+        - Articulated bodies or joints
+        - Cloth or soft bodies
+        - Renderer or export
+        - CLI, schema, or agent integration
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe physical intent and observable acceptance criteria, not only a visual effect.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References or examples
+      description: Disclose the source and license for any attached artwork or media.

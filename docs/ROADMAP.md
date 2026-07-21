@@ -16,7 +16,7 @@
 - [x] Ship a unified five-example gallery.
 - [ ] Add articulated walking and `flower-touch`.
 - [ ] Add `pluck`, `drag`, `shake`, and reusable `drop` gesture primitives.
-- [ ] Add automated visual regression fixtures for every recipe.
+- [x] Add automated visual regression fixtures for every recipe.
 
 ## v0.3 — Prompt compiler
 

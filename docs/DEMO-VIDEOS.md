@@ -77,6 +77,24 @@ The verifier checks:
 It also prints a SHA-256 checksum for every file so a reviewed master can be
 identified exactly.
 
+## Approved `0.2.0-alpha.2` media
+
+The 2026-07-21 release-candidate encodes were decoded, visually inspected, and
+approved with these SHA-256 checksums:
+
+| File | SHA-256 |
+| --- | --- |
+| `oddlyalive-demos-overview.mp4` | `2b885811737841364721a16b38c7417810d1f13bcb785caeca5318bf2bfb7ad8` |
+| `01-string-touch.mp4` | `a4816683c1edb8cc9b9c7a8d0937ffb36c5ddb47899df5bae1aff13bd27d373c` |
+| `02-crystal-mobile.mp4` | `e148c455f480e52bfb18c48f691bc98d46acd5dcb7f383d101833644ab3d0834` |
+| `03-ball-lab.mp4` | `38fcb06e7a0f6c571ef7d49055aa38242581b5aef6805cbabb054c0b3012d2e5` |
+| `04-football-kick.mp4` | `54b00a6adaeab87140403dbd3478a635c840424c56597e15ff3c2e2558088929` |
+| `05-shoe-splash.mp4` | `a7b061d1a9f192a2c944ef8001eafa4b6a4db7c9e2be0fc0a150b70cc408bc0b` |
+| `oddlyalive-string-touch.gif` | `da5d2db730703fdd7b99293f00a7e4e86de42137faf8252f13ac158bad5a00c2` |
+
+If any file differs, treat it as a new candidate and repeat decode and visual
+review before upload.
+
 ## Review-before-publish protocol
 
 Do not push or publish merely because the build passed.

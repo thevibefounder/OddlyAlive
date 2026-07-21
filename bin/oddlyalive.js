@@ -128,9 +128,14 @@ function createStarter(args) {
   cpSync(join(packageRoot, "schemas"), join(target, "schemas"), {
     recursive: true
   });
-  cpSync(join(packageRoot, "scripts"), join(target, "scripts"), {
+  cpSync(join(packageRoot, "assets"), join(target, "assets"), {
     recursive: true
   });
+  mkdirSync(join(target, "scripts"), { recursive: true });
+  cpSync(
+    join(packageRoot, "scripts", "serve.js"),
+    join(target, "scripts", "serve.js")
+  );
 
   const scenePath = join(target, "examples", preset, "scene.json");
   const scene = JSON.parse(readFileSync(scenePath, "utf8"));

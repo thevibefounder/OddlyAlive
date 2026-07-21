@@ -44,6 +44,13 @@ test("the CLI can create every built-in recipe", async () => {
     "football-kick",
     "shoe-splash"
   ];
+  const requiredAssets = {
+    "string-touch": ["letter-charm-square.png"],
+    "crystal-mobile": ["crystal.png"],
+    "ball-lab": ["baseball.png", "basketball.png", "soccer-ball.png"],
+    "football-kick": ["kicking-cleat.png", "soccer-ball.png"],
+    "shoe-splash": ["sneaker.png"]
+  };
   for (const preset of presets) {
     const target = join(temporaryRoot, preset);
     const result = spawnSync(
@@ -58,6 +65,11 @@ test("the CLI can create every built-in recipe", async () => {
     assert.equal(typeof scene.type, "string");
     await readFile(join(target, "examples/shared/player.js"), "utf8");
     await readFile(join(target, "schemas/scene.schema.json"), "utf8");
+    for (const asset of requiredAssets[preset]) {
+      await readFile(join(target, "assets/photoreal", asset));
+    }
+    await readFile(join(target, "assets/photoreal/PROVENANCE.md"), "utf8");
+    await readFile(join(target, "scripts/serve.js"), "utf8");
     const html = await readFile(
       join(target, `examples/${preset}/index.html`),
       "utf8"
