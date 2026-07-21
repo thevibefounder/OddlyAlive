@@ -279,9 +279,11 @@ Append-only. Follow the TheVibeFounder workspace's
 - **Learned:** The canonical pages return `200`, the former OddlyAlive route
   returns `301`, all 17 tests and all six media checks pass, all reachable Git
   authors use the brand no-reply identity, no unreachable Git objects or
-  personal-data/secret patterns were found, and the refreshed 86-file alpha.2
-  tarball has SHA-256
+  personal-data/secret patterns were found, and the two previously cached
+  pre-purge commit IDs now return `No commit found` from GitHub. The refreshed
+  86-file alpha.2 tarball has SHA-256
   `9c83b01da4675e4370bf2408c1b4478f4b98a6bf9dd874a96a3c2b5276ae141f`.
-- **Next:** Keep alpha.2 publication paused until the separately prepared GitHub
-  cached-view purge request is explicitly approved and completed; use the new
-  tarball checksum for any later authorized release.
+- **Next:** The cached-view purge request is no longer needed and was not
+  submitted. Keep alpha.2 publication paused until explicit authorization to
+  merge, tag, create the prerelease, upload media, and publish npm; use the new
+  tarball checksum for that release.
