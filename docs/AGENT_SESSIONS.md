@@ -187,3 +187,25 @@ Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
   candidate, create the new `v0.2.0-alpha.2` prerelease without moving the
   existing alpha.1 tag, upload the six verified MP4s, and publish npm under the
   `alpha` tag after interactive authentication.
+
+## 2026-07-21 — Senior Eng-Claude — Independent alpha.2 review
+
+- **Did:** Independently re-verified the `0.2.0-alpha.2` candidate at `c804f41`
+  without pushing, tagging, or publishing. Re-ran the full test suite (17/17
+  pass) and `npm run demos:verify` (all six MP4s decode cleanly at contract
+  durations/frame counts). Confirmed all seven media SHA-256 checksums match
+  `docs/DEMO-VIDEOS.md`, and rebuilt the npm tarball from the committed source —
+  byte-identical to the recorded release artifact, SHA-256
+  `79781e742c3fe64b18cd736104c44ab71d2a793ec9d87f0d494f30399799d3eb`. Reviewed the
+  release diff, CI workflow, changelog, and package metadata; confirmed
+  `hyperframes@0.7.66` is publicly available on npm and `repository` is set so
+  the README GIF resolves on npmjs.com after push.
+- **Changed:** Only this session log entry.
+- **Learned:** The tarball is reproducible from `c804f41` via `npm pack`, so the
+  recorded SHA-256 doubles as a source-integrity proof. The CI demo-gate job
+  (`npx hyperframes check` on ubuntu-latest) has never run on a GitHub runner;
+  watch the first CI run after push. The `[0.2.0-alpha.1]` changelog link
+  assumes a `v0.2.0-alpha.1` tag exists once the repo is public.
+- **Next:** Candidate is approved from review. Awaiting explicit user
+  authorization to merge/push, tag `v0.2.0-alpha.2`, upload MP4 release assets,
+  and publish npm under the `alpha` dist-tag (interactive auth required).
