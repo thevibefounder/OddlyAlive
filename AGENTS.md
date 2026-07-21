@@ -1,7 +1,7 @@
 # OddlyAlive agent contract
 
-Read `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md` before
-changing this repository. Log every working session in
+Read the TheVibeFounder workspace's `docs/SESSION-PROTOCOL.md` before changing
+this repository. Log every working session in
 `docs/AGENT_SESSIONS.md`, run `npm run check`, and commit with the agent handle.
 
 ## Product invariants

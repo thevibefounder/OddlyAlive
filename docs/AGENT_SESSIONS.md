@@ -1,6 +1,7 @@
 # OddlyAlive agent sessions
 
-Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
+Append-only. Follow the TheVibeFounder workspace's
+`docs/SESSION-PROTOCOL.md`.
 
 ## 2026-07-18 — Agent.md-Codex — OddlyAlive v0.1 foundation
 
@@ -125,8 +126,8 @@ Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
 
 ## 2026-07-21 — Agent.md-Codex — Canonical GitHub clone migration
 
-- **Did:** Made `OddlyAlive checkout` the canonical local
-  repository and migrated the intentional engine, documentation, render
+- **Did:** Made this OddlyAlive checkout the canonical local repository and
+  migrated the intentional engine, documentation, render
   scripts, HyperFrames project, media ledger, and final transparent
   photographic assets from the temporary release worktree. Excluded stale
   renders, review snapshots, generated bundles, dependency folders, chroma
@@ -209,3 +210,19 @@ Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
 - **Next:** Candidate is approved from review. Awaiting explicit user
   authorization to merge/push, tag `v0.2.0-alpha.2`, upload MP4 release assets,
   and publish npm under the `alpha` dist-tag (interactive auth required).
+
+## 2026-07-21 — Release Agent-Codex — Privacy hardening
+
+- **Did:** Audited the repository, npm payload, rendered media metadata, and Git
+  authorship for personal data. Redacted every personal local path from the
+  current tree and configured future commits in this checkout to use the
+  TheVibeFounder GitHub no-reply identity.
+- **Changed:** Updated `AGENTS.md` and `docs/AGENT_SESSIONS.md`; updated only the
+  local repository's Git author configuration outside the committed tree.
+- **Learned:** The current tree, npm payload, images, and videos can be free of
+  personal data, but existing commits still contain the prior author email.
+  Removing that historical record would require a destructive history rewrite
+  and cannot preserve the existing alpha.1 tag unchanged.
+- **Next:** Keep publication paused. Decide whether the public work email in the
+  immutable alpha.1 history is acceptable or authorize a coordinated history
+  rewrite and replacement release strategy.
