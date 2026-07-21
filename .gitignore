@@ -12,3 +12,4 @@ videos/**/assets/images/photoreal/
 videos/**/renders/
 videos/**/review/
 videos/**/snapshots/
+videos/**/.thumbnails/

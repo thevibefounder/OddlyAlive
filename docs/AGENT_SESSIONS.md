@@ -148,3 +148,18 @@ Append-only. Follow `TheVibeFounder-workspace/docs/SESSION-PROTOCOL.md`.
   HyperFrames preview, then render and verify replacement media. After that,
   add release CI/hygiene, clean-room test the npm tarball, and request explicit
   authorization before pushing or publishing.
+
+## 2026-07-21 — Agent.md-Codex — Canonical visual-review gate
+
+- **Did:** Revalidated the canonical 32-second HyperFrames composition at the
+  nine handoff hero timestamps, started the public gallery and Studio review
+  surfaces, and confirmed both endpoints return HTTP 200. Kept the render,
+  push, release, and npm publication gates closed pending visual approval.
+- **Changed:** Added the generated HyperFrames `.thumbnails/` cache to
+  `.gitignore`; updated `docs/AGENT_SESSIONS.md` with this session.
+- **Learned:** HyperFrames `0.7.66` remains current. The review composition
+  still passes with zero runtime or motion errors and 301/301 WCAG AA text
+  checks; opening Studio creates a thumbnail cache that must stay outside Git.
+- **Next:** Review the five scenes at normal speed in Studio and approve or
+  request revisions. Only after explicit approval, render and decode-verify the
+  final photographic MP4s and GIF; do not push or publish npm yet.
