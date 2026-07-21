@@ -287,3 +287,29 @@ Append-only. Follow the TheVibeFounder workspace's
   submitted. Keep alpha.2 publication paused until explicit authorization to
   merge, tag, create the prerelease, upload media, and publish npm; use the new
   tarball checksum for that release.
+
+## 2026-07-21 — Senior Eng-Claude — Canonical `/os` migration review
+
+- **Did:** Independently verified the canonical-migration handoff. Confirmed
+  live URLs: `/os/` and `/os/oddlyalive/` return `200`, the former
+  `/opensource/oddlyalive/` returns a permanent `301` to the new path, the
+  sitemap lists both `/os` pages, and the OddlyAlive page carries correct
+  canonical OG metadata. Verified the history rewrite: old SHAs `c804f41` and
+  `10aa40e` resolve neither locally nor on the GitHub API (`422`), `git fsck`
+  reports no unreachable objects, all authorship is the
+  `thevibefounder@users.noreply.github.com` identity, and no personal paths
+  remain in tracked files. Re-ran the suite (17/17 pass), confirmed all seven
+  media SHA-256 checksums match `docs/DEMO-VIDEOS.md`, and reproduced the
+  86-file tarball byte-for-byte at
+  `9c83b01da4675e4370bf2408c1b4478f4b98a6bf9dd874a96a3c2b5276ae141f`.
+- **Changed:** Only this session log entry.
+- **Learned:** The rewrite maps `bdf552a` ← old `c804f41` (alpha.2 candidate)
+  and `740c5e4` ← old `10aa40e` (previous review log), so earlier session
+  entries citing the old SHAs and the superseded tarball checksum
+  (`79781e74…`) describe pre-rewrite history that no longer resolves. The
+  rewritten branch `codex/canonical-migration` is pushed to origin; `main`
+  remains at `446901b` with only the `v0.2.0-alpha.1` tag.
+- **Next:** Alpha.2 release steps remain gated on explicit authorization:
+  merge/PR to `main`, tag `v0.2.0-alpha.2` on the rewritten history, upload
+  the six verified MP4s as release assets, and publish npm under the `alpha`
+  dist-tag with interactive authentication.
