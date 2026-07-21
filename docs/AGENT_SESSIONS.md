@@ -226,3 +226,23 @@ Append-only. Follow the TheVibeFounder workspace's
 - **Next:** Keep publication paused. Decide whether the public work email in the
   immutable alpha.1 history is acceptable or authorize a coordinated history
   rewrite and replacement release strategy.
+
+## 2026-07-21 — Release Agent-Codex — Purge personal data from Git history
+
+- **Did:** With explicit authorization, rewrote all eight commits using
+  `git-filter-repo`, replaced the prior author and committer email with the
+  TheVibeFounder GitHub no-reply identity, and redacted the three historical
+  local-path disclosures. Verified the rewritten alpha.2 candidate in a clean
+  clone, then force-updated only public `main` and `v0.2.0-alpha.1`; no alpha.2
+  tag, release, media upload, or npm publication occurred.
+- **Changed:** Rewrote repository history and moved public `main` plus the
+  existing alpha.1 tag to sanitized commit `446901b`; updated this session log.
+- **Learned:** The rewritten candidate remains byte-identical at the tree and
+  npm-package levels: 17/17 tests pass and the tarball SHA-256 remains
+  `79781e742c3fe64b18cd736104c44ab71d2a793ec9d87f0d494f30399799d3eb`.
+  GitHub still serves the former commit IDs from its cache even though no
+  branch, tag, fork, or pull request references them, so a provider-side purge
+  request is required for strict removal.
+- **Next:** Submit the prepared GitHub Support request for cached-view removal
+  and server-side garbage collection, then confirm the old commit IDs stop
+  resolving before publishing alpha.2.
