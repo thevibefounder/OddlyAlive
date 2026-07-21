@@ -265,3 +265,23 @@ Append-only. Follow the TheVibeFounder workspace's
   website field, submit the already drafted cache-purge request after explicit
   approval, and use the refreshed tarball checksum for the eventual alpha.2
   release.
+
+## 2026-07-21 — Release Agent-Codex — Shorten canonical project URLs to `/os`
+
+- **Did:** Moved the public catalog and OddlyAlive showcase from `/opensource/`
+  to `/os/`, updated site navigation, sitemap, canonical and social metadata,
+  package-facing links, and the GitHub repository homepage, while preserving
+  legacy URLs with permanent redirects. Re-ran the complete release and privacy
+  audit after the URL change.
+- **Changed:** Updated `README.md`, `package.json`, `CHANGELOG.md`, and this
+  session log. The companion website route migration shipped as commit
+  `bd4896d` in the TheVibeFounder website repository.
+- **Learned:** The canonical pages return `200`, the former OddlyAlive route
+  returns `301`, all 17 tests and all six media checks pass, all reachable Git
+  authors use the brand no-reply identity, no unreachable Git objects or
+  personal-data/secret patterns were found, and the refreshed 86-file alpha.2
+  tarball has SHA-256
+  `9c83b01da4675e4370bf2408c1b4478f4b98a6bf9dd874a96a3c2b5276ae141f`.
+- **Next:** Keep alpha.2 publication paused until the separately prepared GitHub
+  cached-view purge request is explicitly approved and completed; use the new
+  tarball checksum for any later authorized release.

@@ -2,7 +2,7 @@
 
 **Make anything feel alive.**
 
-[Project page](https://thevibefounder.com/opensource/oddlyalive/) ·
+[Project page](https://thevibefounder.com/os/oddlyalive/) ·
 [Source](https://github.com/thevibefounder/OddlyAlive)
 
 OddlyAlive is an open-source toolkit for natural, deterministic object motion.
