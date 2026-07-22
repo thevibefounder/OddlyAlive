@@ -313,3 +313,23 @@ Append-only. Follow the TheVibeFounder workspace's
   merge/PR to `main`, tag `v0.2.0-alpha.2` on the rewritten history, upload
   the six verified MP4s as release assets, and publish npm under the `alpha`
   dist-tag with interactive authentication.
+
+## 2026-07-21 — Release Agent-Codex — Publish `0.2.0-alpha.2`
+
+- **Did:** Fast-forwarded the independently verified release onto the sole
+  `main` branch, removed the temporary branch locally and remotely, ran the
+  first live GitHub Actions workflow, tagged `v0.2.0-alpha.2`, created the
+  GitHub prerelease, uploaded all six verified MP4 assets, published the public
+  npm package, smoke-tested the installed CLI, and refreshed the public project
+  page.
+- **Changed:** Updated `README.md`, `docs/QUICKSTART.md`, and this session log.
+  The release tag points to `6714fe2`; the companion website update shipped as
+  commit `3410d07` in the TheVibeFounder website repository.
+- **Learned:** All three CI jobs passed, including the first Ubuntu demo gate.
+  The public 86-file npm artifact reproduces at SHA-256
+  `9c83b01da4675e4370bf2408c1b4478f4b98a6bf9dd874a96a3c2b5276ae141f`.
+  Because this was the package's first publication, npm assigned both `alpha`
+  and `latest` to `0.2.0-alpha.2`, so the unqualified install command works.
+- **Next:** Monitor alpha feedback. Before the stable release, decide when to
+  move `latest` to a stable version and update the GitHub Actions dependencies
+  that emit a non-blocking Node runtime deprecation warning.

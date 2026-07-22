@@ -14,9 +14,7 @@ every run.
 ## 1. Run the gallery
 
 ```bash
-git clone https://github.com/thevibefounder/OddlyAlive.git
-cd OddlyAlive
-npm start
+npx oddlyalive play
 ```
 
 Open the local URL printed in the terminal. Choose any of the five recipes:

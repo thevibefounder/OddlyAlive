@@ -20,9 +20,7 @@ No runtime dependencies. No cloud account. No animation keyframes.
 ## Start in 60 seconds
 
 ```bash
-git clone https://github.com/thevibefounder/OddlyAlive.git
-cd OddlyAlive
-npm start
+npx oddlyalive play
 ```
 
 Open the printed local URL and choose a recipe. Nothing is uploaded; the
@@ -34,6 +32,8 @@ For the full install, customization, and scene-authoring path, read
 ## Try the repository
 
 ```bash
+git clone https://github.com/thevibefounder/OddlyAlive.git
+cd OddlyAlive
 npm start
 ```
 
